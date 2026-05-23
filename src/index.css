@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply font-sans bg-[#f5f2ef] text-texto antialiased; }
+}
+
+@layer components {
+  .field-input {
+    @apply w-full border-0 border-b border-borda bg-transparent
+           py-2 px-1 font-sans text-sm text-texto outline-none
+           transition-colors focus:border-verde-c;
+  }
+  .field-select {
+    @apply w-full border-0 border-b border-borda bg-transparent
+           py-2 px-1 font-sans text-sm text-texto outline-none
+           cursor-pointer transition-colors focus:border-verde-c;
+  }
+  .field-textarea {
+    @apply w-full border border-borda rounded-lg bg-transparent
+           p-3 mt-1 font-sans text-sm text-texto outline-none resize-y
+           min-h-[64px] transition-colors focus:border-verde-c;
+  }
+  .field-label {
+    @apply text-[10px] tracking-widest uppercase text-cinza;
+  }
+  .section-card {
+    @apply bg-white rounded-2xl border border-borda/60 p-6 mb-4;
+  }
+  .section-title {
+    @apply flex items-center gap-2 text-[10px] tracking-[3px] uppercase
+           text-verde-c font-medium mb-5 pb-3 border-b border-borda/60;
+  }
+  .prod-card {
+    @apply border border-borda/60 rounded-xl p-5 mb-4 bg-[#faf9f7] last:mb-0;
+  }
+  .prod-header {
+    @apply flex items-center gap-2 text-sm font-medium text-verde mb-4;
+  }
+  .badge {
+    @apply text-[9px] px-2.5 py-0.5 rounded-full tracking-wide uppercase;
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .progress-bar { display: none !important; }
+  body { background: white !important; }
+  .section-card { break-inside: avoid; }
+}
